@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangotodoappbyjeevan.herokuapp.com', 'localhost', '127.0.0.1']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
