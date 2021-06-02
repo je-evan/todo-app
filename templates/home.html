@@ -1,0 +1,24 @@
+{% extends 'index.html' %} {% block base %}
+
+<div>
+  <h1>Welcome to To-Do app</h1>
+  {% if user.is_authenticated %}
+  <p>{{ user }}</p>
+  <p>Let's get started by adding a task</p>
+  <a type="button" class="btn btn-outline-success" href="{% url 'add' %}"
+    >Add Task</a
+  >
+  {% else %}
+  <p>Let's get started by registering you</p>
+  <a type="button" class="btn btn-outline-primary" href="{% url 'signup' %}"
+    >Register</a
+  >
+  &nbsp;
+  <span
+    >Already have an account?
+    <a class="btn btn-link" href="{%url 'login'%}">login</a></span
+  >
+  {% endif %}
+</div>
+
+{% endblock %}

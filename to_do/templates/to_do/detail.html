@@ -1,0 +1,25 @@
+{% extends 'index.html' %} {% block base %}
+<div class="px-4 py-5 my-5">
+  <h2 class="display-6">{{ object.task}}</h2>
+  <p class="lead">{{object.category}}</p>
+  {% if object.completed %}
+  <p class="lead">You have completed this task</p>
+  <a href="{% url 'delete' object.id %}" class="btn btn-outline-danger btn-sm"
+    >Delete</a
+  >
+  {% else %}
+  <p class="lead">You have to complete this task by {{object.due_date}}</p>
+  <div class="d-grid gap-2 d-sm-flex mb-5">
+    <a
+      href="{% url 'update' object.id %}"
+      class="btn btn-outline-success btn-sm"
+      >Update</a
+    >
+    <a href="{% url 'delete' object.id %}" class="btn btn-outline-danger btn-sm"
+      >Delete</a
+    >
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}
