@@ -136,4 +136,4 @@ LOGIN_URL = 'login'
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
