@@ -5,19 +5,13 @@
   {% if user.is_authenticated %}
   <p>{{ user }}</p>
   <p>Let's get started by adding a task</p>
-  <a type="button" class="btn btn-outline-success" href="{% url 'add' %}"
-    >Add Task</a
-  >
+  <a type="button" class="btn btn-outline-success mt-2" href="{% url 'add' %}">Add Task</a>
   {% else %}
   <p>Let's get started by registering you</p>
-  <a type="button" class="btn btn-outline-primary" href="{% url 'signup' %}"
-    >Register</a
-  >
+  <a type="button" class="btn btn-outline-primary mt-2" href="{% url 'signup' %}">Register</a>
   &nbsp;
-  <span
-    >Already have an account?
-    <a class="btn btn-link" href="{%url 'login'%}">login</a></span
-  >
+  <span>Already have an account?
+    <a class="btn btn-link" href="{%url 'login'%}">login</a></span>
   {% endif %}
 </div>
 
