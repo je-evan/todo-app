@@ -1,18 +1,12 @@
-{% extends 'index.html' %} {% block base %}
+{% extends 'index.html' %} {% load crispy_forms_tags %} {% block base %}
 <div class="container main">
   <div>
     <h1>Sign Up here!</h1>
     <form method="POST">
-      {% csrf_token %} {{ form.as_p }}
-      <input
-        type="submit"
-        class="btn btn-outline-primary"
-        value="Sign Up"
-      />&nbsp;
-      <span
-        >Already have an account?
-        <a class="btn btn-link" href="{%url 'login'%}">login</a></span
-      >
+      {% csrf_token %} {{ form|crispy }}
+      <input type="submit" class="btn btn-outline-primary" value="Sign Up" />&nbsp;
+      <span>Already have an account?
+        <a class="btn btn-link" href="{%url 'login'%}">login</a></span>
     </form>
   </div>
 </div>

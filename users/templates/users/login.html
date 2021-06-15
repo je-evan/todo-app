@@ -1,19 +1,14 @@
-{% extends 'index.html' %} {% block base %}
+{% extends 'index.html' %} {% load crispy_forms_tags %} {% block base %}
 <div class="container main">
   <div>
     {% if user.is_authenticated %}
     <h1>You have already logged in.</h1>
     <p>Start adding task</p>
-    <a
-      type="button"
-      class="btn btn-danger btn-center"
-      href="{% url 'add' pk=object.pk %}"
-      >Add Task</a
-    >
+    <a type="button" class="btn btn-danger btn-center" href="{% url 'add' pk=object.pk %}">Add Task</a>
     {% else %}
     <h1>Login here!</h1>
     <form method="POST">
-      {% csrf_token %} {{ form.as_p }}
+      {% csrf_token %} {{ form|crispy }}
       <input type="submit" class="btn btn-outline-primary" value="Login" />
     </form>
     {% endif %}

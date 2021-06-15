@@ -36,6 +36,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms'
     'users.apps.UsersConfig',
     'to_do.apps.ToDoConfig',
     'django.contrib.admin',

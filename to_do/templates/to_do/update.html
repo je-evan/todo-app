@@ -1,14 +1,12 @@
-{% extends 'index.html' %} {% block base %}
+{% extends 'index.html' %} {% load crispy_forms_tags %} {% block base %}
 <div class="container main">
   <div>
     <form method="POST">
       {% csrf_token %}
       <h4>Make {{object.task}} as completed</h4>
-      {{form.as_p}}
+      {{form|crispy}}
       <input type="submit" class="btn btn-success" value="Update" />
-      <a class="btn btn-outline-primary" href="{% url 'detail' object.id %}"
-        >Cancle</a
-      >
+      <a class="btn btn-outline-primary" href="{% url 'detail' object.id %}">Cancle</a>
     </form>
   </div>
 </div>
