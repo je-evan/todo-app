@@ -4,7 +4,7 @@
     <h1>Sign Up here!</h1>
     <form method="POST">
       {% csrf_token %} {{ form|crispy }}
-      <input type="submit" class="btn btn-outline-primary" value="Sign Up" />&nbsp;
+      <input type="submit" class="btn btn-outline-primary mt-2" value="Sign Up" />&nbsp;
       <span>Already have an account?
         <a class="btn btn-link" href="{%url 'login'%}">login</a></span>
     </form>
