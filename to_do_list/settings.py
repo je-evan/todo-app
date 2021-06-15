@@ -140,3 +140,4 @@ LOGIN_REDIRECT_URL = 'list'
 
 LOGIN_URL = 'login'
 
+CRISPY_TEMPLATE_PACK = "bootstrap4"
